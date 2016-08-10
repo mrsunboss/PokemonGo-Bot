@@ -65,6 +65,10 @@ def main():
         sys.stdout = codecs.getwriter('utf8')(sys.stdout)
         sys.stderr = codecs.getwriter('utf8')(sys.stderr)
 
+        reload(sys)
+        sys.setdefaultencoding('utf8')
+        logger.info('PokemonGO Bot v1.0(Rick)')
+
         config = init_config()
         if not config:
             return
